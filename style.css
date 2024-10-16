@@ -1,0 +1,190 @@
+/* Reset & Box Sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background: url("https://source.unsplash.com/random/1600x900/?landscape")
+    no-repeat center center fixed;
+  background-size: cover;
+  background-color: #1a1a1a; /* Fallback color */
+  background-blend-mode: overlay;
+}
+body {
+  background: url(bg-image.jpg) no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+/* Card Styles */
+.card {
+  border: 2px solid #05d7ea;
+  padding: 2em;
+  background-color: rgba(10, 10, 10, 0.85); /* Transparency */
+  color: white;
+  border-radius: 30px;
+  width: 90%; /* Make width responsive */
+  max-width: 500px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.9);
+}
+
+/* Search Box */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5em;
+  width: 100%;
+  flex-wrap: wrap; /* Make content wrap on small screens */
+}
+
+input {
+  flex: 1;
+  min-width: 60%; /* Input adapts on smaller screens */
+  margin-right: 0.5em;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 0.5em 1em;
+  background-color: #4c4c4c;
+  color: white;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+input:focus {
+  background-color: white;
+  color: black;
+}
+
+::placeholder {
+  color: #ddd;
+}
+
+/* Button Styles */
+button {
+  margin: 0.5em;
+  border-radius: 50%;
+  border: none;
+  height: 2.5em;
+  width: 2.5em;
+  background-color: #4c4c4c;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+  background-color: #f0e704;
+  color: black;
+  transform: scale(1.1);
+}
+
+/* Description Styling */
+.description {
+  text-transform: capitalize;
+  margin-top: 1em;
+  font-size: 1.2rem;
+  color: #ddd;
+}
+
+/* Social Links */
+.social-link {
+  position: relative;
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Ensure it wraps on smaller screens */
+  width: 100%;
+}
+
+.social-link ul {
+  padding: 0;
+}
+
+.social-link li {
+  display: inline;
+  margin: 5px;
+}
+
+.social-link a {
+  color: white;
+  font-family: inherit;
+  font-size: 1.2rem;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.social-link a:hover {
+  color: #4ff00b;
+  transform: scale(1.2);
+}
+
+/* Flex Container */
+.flex {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 1em auto;
+  height: 50px;
+}
+
+/* Temperature Heading */
+h1.temp {
+  margin: 0;
+  font-size: 2rem;
+  color: #3ff004;
+}
+
+/* Loading Animation */
+.W.loading {
+  visibility: hidden;
+  max-height: 20px;
+  position: relative;
+}
+
+.W.loading::after {
+  visibility: visible;
+  content: "Loading...";
+  color: white;
+  position: absolute;
+  top: 0%;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 1.5em;
+  }
+
+  input {
+    min-width: 100%; /* Full-width input on small screens */
+    margin-right: 0;
+    margin-bottom: 0.5em;
+  }
+
+  .social-link {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-link li {
+    margin: 10px 0;
+  }
+}
